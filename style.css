@@ -1,59 +1,31 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8f9fa; color: #333; line-height: 1.6; }
-.container { width: 90%; max-width: 1200px; margin: auto; padding: 20px; text-align: center; }
+.container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 20px; text-align: center; }
 
-header { background: #1e1e1e; color: #ffcc00; padding: 4rem 0; border-bottom: 5px solid #ffcc00; }
-header h1 { font-size: 2.5rem; letter-spacing: 2px; }
+/* Header mejorado para móviles */
+header { background: #1e1e1e; color: #ffcc00; padding: 3rem 1rem; border-bottom: 5px solid #ffcc00; }
+header h1 { font-size: 1.8rem; letter-spacing: 1px; word-wrap: break-word; }
+header p { font-size: 0.9rem; margin-top: 10px; color: #fff; }
 
-h2 { margin: 40px 0; font-size: 2rem; color: #1e1e1e; }
+/* Media query para pantallas grandes */
+@media (min-width: 768px) {
+    header h1 { font-size: 2.5rem; }
+}
 
-/* Galería */
-.galeria-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.galeria img { width: 100%; height: 220px; object-fit: cover; border-radius: 4px; transition: transform 0.3s; }
-.galeria img:hover { transform: scale(1.03); }
+h2 { margin: 40px 0; font-size: 1.8rem; color: #1e1e1e; }
 
-/* Grid Servicios */
-.servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; justify-items: center; margin-bottom: 60px; }
+/* Galería y Servicios */
+.galeria-grid, .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; justify-items: center; }
+.galeria img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; }
 
-/* Efecto Flip */
-.card-container { perspective: 1000px; width: 280px; height: 380px; }
+/* Tarjetas */
+.card-container { perspective: 1000px; width: 280px; height: 350px; }
 .card { position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; }
 .card-container:hover .card { transform: rotateY(180deg); }
-
-.card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 8px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 .card-front { background: #fff; border: 1px solid #ddd; }
-.card-front img { width: 100%; height: 220px; object-fit: cover; border-radius: 4px; margin-bottom: 15px; }
-
+.card-front img { width: 100%; height: 180px; object-fit: cover; border-radius: 4px; margin-bottom: 10px; }
 .card-back { background: #1e1e1e; color: #fff; transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #ffcc00; }
-.card-back h3 { color: #ffcc00; margin-bottom: 10px; }
+.btn-cotiza { margin-top: 15px; padding: 10px 20px; background: #ffcc00; color: #1e1e1e; text-decoration: none; border-radius: 4px; font-weight: bold; }
 
-.btn-cotiza { margin-top: 20px; padding: 12px 25px; background: #ffcc00; color: #1e1e1e; text-decoration: none; border-radius: 4px; font-weight: bold; transition: background 0.3s; }
-.btn-cotiza:hover { background: #e6b800; }
-
-footer { background: #1e1e1e; color: #fff; padding: 50px 0; }
-.frase { font-style: italic; color: #bbb; margin-bottom: 10px; }
-/* Ajuste de margen y centrado del contenido principal */
-.container { 
-    width: 85%; /* Reducido de 90% a 85% para dar más aire lateral */
-    max-width: 1100px; /* Limitamos el ancho máximo para que no se vea gigante */
-    margin: 0 auto; /* Centrado perfecto */
-    padding: 20px; 
-    text-align: center; 
-}
-
-/* Mejora en la cuadrícula de servicios para evitar que se vean muy separadas */
-.servicios-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(260px, 280px)); /* Limita el ancho de las tarjetas */
-    gap: 40px; 
-    justify-content: center; /* Centra las tarjetas si no llenan la fila */
-    margin: 40px auto; 
-}
-
-/* Ajuste de las tarjetas para mejor proporción */
-.card-container { 
-    perspective: 1000px; 
-    width: 280px; 
-    height: 360px; 
-    margin: 0 auto; /* Asegura que la tarjeta esté centrada dentro de su columna */
-}
+footer { background: #1e1e1e; color: #fff; padding: 40px 0; }

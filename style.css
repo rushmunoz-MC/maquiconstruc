@@ -32,3 +32,28 @@ h2 { margin: 40px 0; font-size: 2rem; color: #1e1e1e; }
 
 footer { background: #1e1e1e; color: #fff; padding: 50px 0; }
 .frase { font-style: italic; color: #bbb; margin-bottom: 10px; }
+/* Ajuste de margen y centrado del contenido principal */
+.container { 
+    width: 85%; /* Reducido de 90% a 85% para dar más aire lateral */
+    max-width: 1100px; /* Limitamos el ancho máximo para que no se vea gigante */
+    margin: 0 auto; /* Centrado perfecto */
+    padding: 20px; 
+    text-align: center; 
+}
+
+/* Mejora en la cuadrícula de servicios para evitar que se vean muy separadas */
+.servicios-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(260px, 280px)); /* Limita el ancho de las tarjetas */
+    gap: 40px; 
+    justify-content: center; /* Centra las tarjetas si no llenan la fila */
+    margin: 40px auto; 
+}
+
+/* Ajuste de las tarjetas para mejor proporción */
+.card-container { 
+    perspective: 1000px; 
+    width: 280px; 
+    height: 360px; 
+    margin: 0 auto; /* Asegura que la tarjeta esté centrada dentro de su columna */
+}

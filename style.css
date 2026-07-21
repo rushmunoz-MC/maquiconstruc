@@ -1,31 +1,52 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8f9fa; color: #333; line-height: 1.6; }
-.container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 20px; text-align: center; }
 
-/* Header mejorado para móviles */
-header { background: #1e1e1e; color: #ffcc00; padding: 3rem 1rem; border-bottom: 5px solid #ffcc00; }
-header h1 { font-size: 1.8rem; letter-spacing: 1px; word-wrap: break-word; }
-header p { font-size: 0.9rem; margin-top: 10px; color: #fff; }
+/* Fondo general de la web acorde a sector industrial (gris asfalto muy sutil para alto contraste con tarjetas) */
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #e9ecef; color: #1a1a1a; line-height: 1.6; }
+.container { width: 90%; max-width: 1150px; margin: 0 auto; padding: 25px 20px; text-align: center; }
 
-/* Media query para pantallas grandes */
+/* Header estilo industrial premium fundido con el fondo negro del logo */
+header { background: #0b0c10; color: #c5c6c7; padding: 2.5rem 1rem; border-bottom: 4px solid #2980b9; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+.header-container { display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap; text-align: left; }
+
+/* Logo con fondo negro puro para fusionarse perfectamente sin bordes bruscos */
+.logo-empresa { max-width: 170px; height: auto; object-fit: contain; display: block; background: #0b0c10; border: none; }
+.header-texto { flex: 1; min-width: 240px; }
+header h1 { font-size: 2rem; letter-spacing: 2px; color: #ffffff; text-transform: uppercase; font-weight: 800; }
+header p { font-size: 1rem; margin-top: 6px; color: #adb5bd; font-weight: 400; }
+
 @media (min-width: 768px) {
-    header h1 { font-size: 2.5rem; }
+    .header-container { justify-content: flex-start; text-align: left; }
+    .logo-empresa { max-width: 200px; }
+    header h1 { font-size: 2.4rem; }
 }
 
-h2 { margin: 40px 0; font-size: 1.8rem; color: #1e1e1e; }
+h2 { margin: 50px 0 30px 0; font-size: 1.9rem; color: #0b0c10; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-left: 6px solid #2980b9; padding-left: 12px; display: inline-block; }
 
-/* Galería y Servicios */
-.galeria-grid, .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; justify-items: center; }
-.galeria img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; }
+/* Galería Top Industrial */
+.galeria-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; justify-items: center; }
+.galeria-item { width: 100%; overflow: hidden; border-radius: 8px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); background: #ffffff; border: 1px solid #dcdde1; transition: transform 0.3s ease; }
+.galeria-item:hover { transform: translateY(-5px); }
+.galeria img { width: 100%; height: 210px; object-fit: cover; display: block; }
 
-/* Tarjetas */
-.card-container { perspective: 1000px; width: 280px; height: 350px; }
+/* Servicios y Tarjetas Estilo Web Corporativa Pro */
+.servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; justify-items: center; }
+.card-container { perspective: 1000px; width: 100%; max-width: 300px; height: 360px; }
 .card { position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; }
 .card-container:hover .card { transform: rotateY(180deg); }
-.card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-.card-front { background: #fff; border: 1px solid #ddd; }
-.card-front img { width: 100%; height: 180px; object-fit: cover; border-radius: 4px; margin-bottom: 10px; }
-.card-back { background: #1e1e1e; color: #fff; transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #ffcc00; }
-.btn-cotiza { margin-top: 15px; padding: 10px 20px; background: #ffcc00; color: #1e1e1e; text-decoration: none; border-radius: 4px; font-weight: bold; }
 
-footer { background: #1e1e1e; color: #fff; padding: 40px 0; }
+.card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 10px; padding: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+.card-front { background: #ffffff; border: 1px solid #dcdde1; display: flex; flex-direction: column; justify-content: space-between; }
+.card-front img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; }
+.card-front h3 { color: #0b0c10; font-size: 1.15rem; margin-top: 10px; }
+
+.card-back { background: #0b0c10; color: #ffffff; transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: center; align-items: center; border: 2px solid #2980b9; }
+.card-back h3 { color: #ffffff; margin-bottom: 10px; font-size: 1.3rem; }
+.card-back p { color: #b2bec3; margin-bottom: 15px; }
+
+.btn-cotiza { margin-top: 10px; padding: 12px 28px; background: #2980b9; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; transition: background 0.3s, transform 0.2s; box-shadow: 0 4px 10px rgba(41,128,185,0.4); }
+.btn-cotiza:hover { background: #1f618d; transform: scale(1.05); }
+
+/* Footer Corporativo */
+footer { background: #0b0c10; color: #a4b0be; padding: 50px 0; border-top: 4px solid #2980b9; margin-top: 60px; }
+footer .frase { color: #ffffff; font-style: italic; font-size: 1.1rem; margin-bottom: 15px; font-weight: 500; }
+footer p { font-size: 0.95rem; }
